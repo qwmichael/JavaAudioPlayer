@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="480.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml/1"
+ fx:controller="MusicPlayer.MusicPlayerController">
+    <MediaView fx:id = "mv" fitHeight="200.0" fitWidth="200.0"/>
+        
+ 
+
+
+   
+    
+
+</AnchorPane>
