@@ -23,12 +23,13 @@
             <MediaView id="mv" fx:id="mv" fitHeight="500.0" fitWidth="500.0" BorderPane.alignment="CENTER" />
    </center>
    <bottom>
-      <HBox prefHeight="100.0" prefWidth="490.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="93.0" prefWidth="933.0" BorderPane.alignment="CENTER">
          <children>
             <VBox prefHeight="100.0" prefWidth="104.0">
                <children>
             	    <Button id="SelectSong" fx:id="SelectSong" prefHeight="31.0" prefWidth="122.0" text="Select Song" />
-                  <Button id="SelectVideo" fx:id="SelectVideo" prefHeight="31.0" prefWidth="118.0" text="Select Video" onAction="#SelectLocalVideo" />
+                  <Button id="SelectVideo" fx:id="SelectVideo" onAction="#SelectLocalVideo" prefHeight="31.0" prefWidth="118.0" text="Select Video" />
+                  <Button id="SelectSong" fx:id="SelectWeb" onAction="#SelectWebVideo" prefHeight="31.0" prefWidth="122.0" text="Select Web" />
                </children>
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">

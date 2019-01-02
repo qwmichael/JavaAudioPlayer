@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="933.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicPlayer.ImportUrlController">
+   <top>
+   <GridPane alignment="center" hgap="10" prefHeight="94.0" prefWidth="933.0" styleClass="root" vgap="10" BorderPane.alignment="CENTER">
+   <children>
+   	  <Label text="URL:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+   	  <TextField fx:id="URLtf" prefHeight="31.0" prefWidth="488.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+   <HBox alignment="center" GridPane.columnIndex="2" GridPane.rowIndex="0">
+      <children>
+      		<Button fx:id="EnterBtn" onAction="#handleURL" prefHeight="31.0" prefWidth="64.0" text="Enter" />
+      </children> 
+   	  </HBox>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+            <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   </GridPane>
+   </top>
+   <center>
+      <WebView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

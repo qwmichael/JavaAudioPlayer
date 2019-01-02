@@ -4,11 +4,14 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Slider;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
@@ -17,6 +20,7 @@ public class VideoPlayerController implements Initializable{
 	@FXML private MediaPlayer mp;
 	@FXML private MediaView mv;
 	@FXML private Media me;
+	@FXML private Slider volSlider;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -32,6 +36,13 @@ public class VideoPlayerController implements Initializable{
 			mv.setPreserveRatio(true);
 			mp.play();
 			
+			volSlider.setValue(mp.getVolume() * 100);
+	        volSlider.valueProperty().addListener(new InvalidationListener() {
+	            @Override
+	            public void invalidated(Observable observable) {
+	                mp.setVolume(volSlider.getValue()/100);
+	            }
+	        });
 			
 		}
 		

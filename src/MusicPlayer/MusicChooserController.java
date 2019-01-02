@@ -32,6 +32,7 @@ import javafx.fxml.Initializable;
 public class MusicChooserController implements Initializable {
     @FXML private Button SelectSong;
     @FXML private Button SelectVideo;
+    @FXML private Button SelectWeb;
     @FXML private FileChooser fc;
     @FXML private MediaPlayer mp;
 	@FXML private MediaView mv;
@@ -109,14 +110,29 @@ public class MusicChooserController implements Initializable {
 	}
 	@FXML private void SelectLocalVideo(ActionEvent event) throws Exception {
 		fc = new FileChooser();
-		fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("MP3 audio files","*.mp3"),
-				new FileChooser.ExtensionFilter("MP4 audio files", "*.mp4"));
+		fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("MP4 audio files", "*.mp4"));
 		File file = fc.showOpenDialog(null);
 		path = file.getAbsolutePath();
 		path = path.replace("\\", "/");
+		
 		Parent root = FXMLLoader.load(getClass().getResource("VideoPlayer.fxml"));
 		Stage stage = new Stage();
         stage.setTitle("VideoPlayer");
+        stage.setScene(new Scene(root));
+        stage.sizeToScene();
+        stage.show();
+        
+    
+       
+		
+	}
+	
+	@FXML private void SelectWebVideo(ActionEvent event) throws Exception {
+		
+	
+		Parent root = FXMLLoader.load(getClass().getResource("ImportUrl.fxml"));
+		Stage stage = new Stage();
+        stage.setTitle("ImportURL");
         stage.setScene(new Scene(root));
         stage.sizeToScene();
         stage.show();
