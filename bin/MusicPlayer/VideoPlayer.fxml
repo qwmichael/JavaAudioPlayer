@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.media.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MusicPlayer.VideoPlayerController">
+   <center>
+      <MediaView fx:id="mv" fitHeight="200.0" fitWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <HBox prefHeight="32.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="97.0" text="Play" />
+            <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Pause" />
+            <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Pause" />
+            <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="97.0" text="Reload" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

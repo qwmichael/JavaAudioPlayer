@@ -14,6 +14,9 @@ import javafx.beans.property.DoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
@@ -28,7 +31,7 @@ import javafx.fxml.Initializable;
 
 public class MusicChooserController implements Initializable {
     @FXML private Button SelectSong;
-    @FXML private Button ConfirmSong;
+    @FXML private Button SelectVideo;
     @FXML private FileChooser fc;
     @FXML private MediaPlayer mp;
 	@FXML private MediaView mv;
@@ -36,7 +39,7 @@ public class MusicChooserController implements Initializable {
 	@FXML private Slider volSlider;
 	@FXML private TextArea ta;
 	@FXML private BorderPane bp;
-    private String path;
+    private static String path;
     private String LyricPath;
     private boolean flag = false;
 
@@ -49,8 +52,7 @@ public class MusicChooserController implements Initializable {
 			@Override
 			public void handle(ActionEvent arg0) {
 				fc = new FileChooser();
-				fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("MP3 audio files","*.mp3"),
-						new FileChooser.ExtensionFilter("MP4 audio files", "*.mp4"));
+				fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("MP3 audio files","*.mp3"));
 				File file = fc.showOpenDialog(null);
 				path = file.getAbsolutePath();
 				
@@ -103,6 +105,22 @@ public class MusicChooserController implements Initializable {
 			
 		});
 		
+
+	}
+	@FXML private void SelectLocalVideo(ActionEvent event) throws Exception {
+		fc = new FileChooser();
+		fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("MP3 audio files","*.mp3"),
+				new FileChooser.ExtensionFilter("MP4 audio files", "*.mp4"));
+		File file = fc.showOpenDialog(null);
+		path = file.getAbsolutePath();
+		path = path.replace("\\", "/");
+		Parent root = FXMLLoader.load(getClass().getResource("VideoPlayer.fxml"));
+		Stage stage = new Stage();
+        stage.setTitle("VideoPlayer");
+        stage.setScene(new Scene(root));
+        stage.sizeToScene();
+        stage.show();
+       
 		
 	}
 	
@@ -131,6 +149,10 @@ public class MusicChooserController implements Initializable {
 	@FXML private void Last(ActionEvent event) throws Exception {
 		mp.seek(mp.getTotalDuration());
 		mp.stop();
+	}
+	
+	public static String getPath() {
+		return path;
 	}
 	
 
